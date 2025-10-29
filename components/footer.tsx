@@ -50,11 +50,16 @@ export function Footer() {
           {/* Horario de Atención */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Horario de Atención</h3>
-            <div className="text-sm text-background/80">
-              <p className="mb-1">Lunes a Viernes</p>
-              <p className="font-semibold text-background mb-4">8:00 - 18:00</p>
-              <p className="mb-1">Sábados</p>
-              <p className="font-semibold text-background">8:00 - 13:00</p>
+            <div className="text-sm text-background/80 space-y-3">
+              <div>
+                <p className="mb-1 font-medium text-background">Radiografías (RX)</p>
+                <p className="text-background/90">Lunes a Viernes: 9:00 - 19:00</p>
+                <p className="text-xs text-background/70 mt-1">Por orden de llegada</p>
+              </div>
+              <div>
+                <p className="mb-1 font-medium text-background">Ecografías (ECO)</p>
+                <p className="text-background/90">Con turno previo</p>
+              </div>
             </div>
           </div>
         </div>

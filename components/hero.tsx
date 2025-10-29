@@ -6,7 +6,7 @@ export function Hero() {
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src="/modern-medical-diagnostic-center-interior.jpg" alt="Imágenes Dr Castro" className="w-full h-full object-cover" />
+        <img src="/SalaDeEspera.png" alt="Sala de espera - Imágenes Dr Castro" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
       </div>
 

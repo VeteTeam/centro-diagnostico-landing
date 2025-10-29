@@ -4,15 +4,21 @@ export function EquipmentSection() {
   const equipment = [
     {
       title: "Ecógrafo de Alta Resolución",
-      description: "Equipamiento de última generación para estudios ecográficos precisos",
-      image: "/modern-ultrasound-machine-medical-equipment.jpg",
+      description: "Equipamiento de última generación para estudios ecográficos precisos y diagnósticos de alta calidad",
+      image: "/Eco1.png",
       icon: Activity,
     },
     {
-      title: "Radiografía Digital Directa",
-      description: "Tecnología digital para imágenes de alta calidad con menor radiación",
-      image: "/digital-x-ray-machine-medical-equipment.jpg",
+      title: "Digitalizador de Radiografías",
+      description: "Digitalizador de última generación para convertir radiografías analógicas a formato digital con máxima resolución y calidad de imagen",
+      image: "/Digitalizador.png",
       icon: Scan,
+    },
+    {
+      title: "Equipamiento Ecográfico Avanzado",
+      description: "Tecnología ecográfica avanzada para estudios diagnósticos precisos y detallados",
+      image: "/eco2.jpeg",
+      icon: Activity,
     },
   ]
 
@@ -28,7 +34,7 @@ export function EquipmentSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {equipment.map((item, index) => (
             <div
               key={index}

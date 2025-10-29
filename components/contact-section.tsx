@@ -21,7 +21,7 @@ export function ContactSection() {
     {
       icon: Clock,
       title: "Horarios de Atención",
-      content: "Lunes a Viernes: 8:00 - 18:00 | Sábados: 8:00 - 13:00",
+      content: "RX: Lunes a Viernes 9:00 - 19:00 (Por orden de llegada) | ECO: Con turno previo",
       action: null,
       href: null,
     },
