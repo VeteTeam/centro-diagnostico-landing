@@ -1,4 +1,5 @@
 import { Activity, Scan } from "lucide-react"
+import Image from "next/image"
 
 export function EquipmentSection() {
   const equipment = [
@@ -40,11 +41,15 @@ export function EquipmentSection() {
               key={index}
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               {/* Icon overlay */}

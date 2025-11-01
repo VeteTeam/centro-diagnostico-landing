@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // 🎯 Purpose: Configuración de Next.js optimizada para producción
+  // 💡 Learning: Habilitamos optimización de imágenes para mejor rendimiento
   images: {
-    unoptimized: true,
+    // Habilitamos optimización de imágenes para mejor rendimiento y SEO
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 }
 

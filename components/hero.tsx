@@ -1,12 +1,21 @@
 import { Button } from "@/components/ui/button"
 import { MessageCircle, ArrowDown } from "lucide-react"
+import Image from "next/image"
 
 export function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src="/SalaDeEspera.png" alt="Sala de espera - Imágenes Dr Castro" className="w-full h-full object-cover" />
+        <Image
+          src="/SalaDeEspera.png"
+          alt="Sala de espera - Imágenes Dr Castro"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          quality={85}
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
       </div>
 

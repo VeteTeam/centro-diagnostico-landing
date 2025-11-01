@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function FacilitiesSection() {
   const facilities = [
     {
@@ -28,11 +30,15 @@ export function FacilitiesSection() {
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
+              <div className="aspect-[4/3] overflow-hidden relative">
+                <Image
                   src={facility.image || "/placeholder.svg"}
                   alt={facility.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <div className="p-6">
