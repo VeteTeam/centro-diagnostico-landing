@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
 } from "@/components/ui/dialog"
 
 interface FacilityGallery {
@@ -61,6 +62,9 @@ function ImageLightbox({
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl w-full p-0 bg-black/95 border-none">
+        <DialogTitle className="sr-only">
+          Vista ampliada de imagen {currentIndex + 1} de {images.length}
+        </DialogTitle>
         <div className="relative w-full h-[90vh] flex items-center justify-center">
           {/* Imagen ampliada */}
           <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center p-4">
