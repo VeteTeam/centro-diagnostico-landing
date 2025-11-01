@@ -1,20 +1,30 @@
+import Image from "next/image"
+import Link from "next/link"
 import { MapPin, Phone } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer 
+      className="bg-foreground text-background py-12"
+      role="contentinfo"
+    >
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="relative h-16 w-16 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl blur-md opacity-50" />
-                <img 
-                  src="/logoImagenesDrCastro.png" 
-                  alt="Imágenes Dr Castro Logo" 
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl blur-md opacity-50" 
+                  aria-hidden="true" 
+                />
+                <Image
+                  src="/logoImagenesDrCastro.png"
+                  alt="Logo Imágenes Dr Castro"
+                  width={64}
+                  height={64}
                   className="h-full w-full object-cover rounded-2xl p-1.5 bg-background/50 shadow-lg relative z-10"
                 />
               </div>
@@ -32,17 +42,20 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                <span className="text-background/80">Dean Funes 581, Córdoba</span>
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" aria-hidden="true" />
+                <address className="text-background/80 not-italic">
+                  Dean Funes 581, Córdoba
+                </address>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <a
+                <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <Link
                   href="https://wa.me/5493518075334"
                   className="text-background/80 hover:text-background transition-colors"
+                  aria-label="Contactar por WhatsApp - Abre en nueva ventana"
                 >
                   +54 9 3518 07-5334
-                </a>
+                </Link>
               </div>
             </div>
           </div>

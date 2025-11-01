@@ -1,151 +1,121 @@
-'use client'
+"use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Badge } from "@/components/ui/badge"
-import { Activity, Monitor, Heart } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Activity, Monitor, Heart, ArrowRight, type LucideIcon } from "lucide-react"
+import { motion } from "framer-motion"
 
-// 💡 Learning: Organizamos las prácticas por categorías para mejor UX
-const practicesCategories = [
+interface PracticeCategory {
+  name: string
+  icon: LucideIcon
+  color: string
+  bgColor: string
+  count: number
+}
+
+const practicesCategories: PracticeCategory[] = [
   {
     name: "Ecografías",
     icon: Activity,
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    practices: [
-      "ECOGRAFIA TOCOGINECOLOGICA CON O SIN TRANSDUCTOR VAGINAL",
-      "ECOGRAFIA TOCOGINECOLOGICA DEL EMBARAZO ( TRIDIMEANCIONAL O TRANSNUCAL )",
-      "ECOGRAFIA MAMARIA UNI O BILATERAL",
-      "ECOGRAFIA CEREBRAL",
-      "ECOGRAFIA OFTALMOLOGICA UNI O BILATERAL",
-      "ECOGRAFIA TIROIDEA",
-      "ECOGRAFIA DE TESTICULOS",
-      "ECOGRAFIA COMPLETA DE ABDOMEN",
-      "ECOGRAFIA HEPATOBILIAR, ESPLENICA O TORACICA",
-      "ECOGRAFIA DE VEJIGA O PROSTATA CON O SIN TRANSDUCTOR RECTAL",
-      "ECOGRAFIA RENAL BILATERAL",
-      "ECOGRAFIA AORTA ABDOMINAL DINAMICA Y ESTATICA",
-      "ECOGRAFIA PANCREATICA O SUPRARRENAL",
-      "ECOGRAFIA PARA LA AMNIOCENTESIS",
-      "ECOGRAFIA CON TRASDUCTOR ENDOVAGINAL",
-      "ECOGRAFIA CON TRANSDUCTOR ENDORECTAL",
-      "ECOGRAFIA MUSCULAR Y OSEAS",
-      "ECOGRAFIA DE PARTES BLANDAS",
-    ]
+    count: 18,
   },
   {
     name: "Ecografía Doppler",
     icon: Heart,
     color: "text-green-600",
     bgColor: "bg-green-50",
-    practices: [
-      "ECODOPPLER COLOR",
-      "ECODOPPLER PERIFERICO COLOR",
-      "ECODOPPLER COLOR CIRCULACION PORTAL-SUPRAHEPATICO-CAVA",
-      "ECODOPPLER COLOR ESPLENICO-CAVA",
-      "ECOGRAFIA TIROIDEA ESPECIALIZADA C/INFORME ECODOPLER",
-      "ECDOPPLER CARDIACO COLOR",
-      "ECODOPPLER CARDIACO FETAL COLOR - ECODOPLER COLOR CIRCULACION PLACENTARIA",
-      "ECODOPPLER TRANSCRANEAL",
-    ]
+    count: 8,
   },
   {
     name: "Radiografías",
     icon: Monitor,
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    practices: [
-      "RADIOSCOPIA SIMPLE",
-      "RADIOSCOPIA CON INTENSIFICADOR DE IMAGEN",
-      "RADIOSCOPIA CON CIRCUITO CERRADO DE TELEVISION",
-      "Rx DEL CRANEO, CARA, SENOS PARANASALES O CAVUM ( PRIMERA EXPOSICION )",
-      "RX DEL CRANEO,CARA SENOS PARANASALES O CAVUN ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx TEMPORAL O AGUJEROS OPTICOS, COMPARATIVOS",
-      "Rx ARTICULACION TEMPOROMANDIBULAR",
-      "Rx DE RAQUIS (COLUMNA) ( PRIMERA EXPOSICION )",
-      "RX DE RAQUIS ( COLUMNA ) ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx DE HOMBRO,HUMERO,PELVIS,CADERA Y FEMUR (PRIMERA EXPOSICION )",
-      "RX DE HOMBRO, HUMERO, PELVIS, CADERA, FEMUR ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx DE ANTEBRAZO,CODO,MANO,RODILLA,PIE,PIERNA, TOBILLO Y PIE (COMPRENDE 2 EXPOSICIONES )",
-      "Rx AMPLIADA O MACRORRADIOGRAFIA",
-      "Rx TORAX ( TELE )",
-      "RX TORAX ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx SERIADA GASTRODUODENAL",
-      "Rx SERIADA GASTRODUODENAL, TECNICA DOBLE CONTRASTE",
-      "Rx SERIADA ESOFAGOGASTRODUODENAL",
-      "Rx TRANSITO INTESTINO DELGADO O COLON",
-      "Rx SERIADA ILEOCECOAPENDICULAR",
-      "RX COLON POR ENEMA Y EVACUADO",
-      "Rx SIMPLE DE ABDOMEN",
-      "RX SERIADA GASTRODUODENAL - NIÑOS",
-      "Rx SIMPLE DE ARBOL URINARIO",
-    ]
-  }
+    count: 24,
+  },
 ]
 
 export function PracticesSection() {
   return (
-    <section id="practicas" className="py-20 bg-background">
+    <section 
+      id="practicas" 
+      className="py-20 bg-secondary/30"
+      aria-labelledby="practices-heading"
+    >
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
+        <motion.div
+          className="max-w-4xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 
+            id="practices-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
+          >
             Prácticas y Estudios Disponibles
           </h2>
-          <p className="text-lg text-muted-foreground text-pretty">
-            Amplia gama de servicios de diagnóstico por imágenes de alta calidad
+          <p className="text-lg text-muted-foreground text-pretty mb-8">
+            Ofrecemos una amplia gama de servicios de diagnóstico por imágenes con tecnología de última generación
           </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-6xl mx-auto space-y-6">
-          {practicesCategories.map((category, categoryIndex) => (
-            <Card key={categoryIndex} className="border-2">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className={`w-10 h-10 ${category.bgColor} rounded-lg flex items-center justify-center`}>
-                    <category.icon className={`w-6 h-6 ${category.color}`} />
-                  </div>
-                  <span className="text-foreground">{category.name}</span>
-                  <Badge variant="secondary" className="ml-auto">
-                    {category.practices.length} prácticas
-                  </Badge>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value={`category-${categoryIndex}`}>
-                    <AccordionTrigger className="text-sm text-muted-foreground hover:text-foreground">
-                      Ver todas las prácticas de {category.name}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="grid gap-2 pt-2">
-                        {category.practices.map((practice, practiceIndex) => (
-                          <div
-                            key={practiceIndex}
-                            className="flex items-start gap-2 p-2 rounded-md hover:bg-secondary/50 transition-colors"
-                          >
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-sm text-foreground">{practice}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
+        {/* Categorías simplificadas */}
+        <motion.div
+          className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+        >
+          {practicesCategories.map((category, index) => (
+            <motion.div
+              key={category.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="bg-card border-2 rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300 hover:border-primary"
+            >
+              <div className={`w-16 h-16 ${category.bgColor} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                <category.icon className={`w-8 h-8 ${category.color}`} aria-hidden="true" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">{category.name}</h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                {category.count} prácticas disponibles
+              </p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground text-sm">
+        {/* Call to action */}
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          <Button asChild size="lg" className="text-lg px-8 py-6">
+            <Link href="/practicas">
+              Ver todas las prácticas
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <p className="text-muted-foreground text-sm mt-4">
             ¿Necesitas información sobre alguna práctica específica?{" "}
-            <a href="#contacto" className="text-primary hover:underline font-semibold">
+            <a 
+              href="#contacto" 
+              className="text-primary hover:underline font-semibold transition-colors"
+            >
               Contáctanos
             </a>
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
 }
-
