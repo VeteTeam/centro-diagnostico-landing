@@ -12,11 +12,6 @@ const nextConfig = {
     imageSizes: [16, 32, 64, 96, 128, 256, 384],
     // Cache TTL aumentado para reducir regeneraciones
     minimumCacheTTL: 31536000, // 1 año (para imágenes estáticas)
-    // Calidad por defecto reducida para mejor rendimiento
-    // Next.js usará estas calidades según el contexto
-    dangerousAllowSVG: false,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Permitir imágenes locales desde la carpeta public
     remotePatterns: [],
     // 🔧 Optimización para producción
