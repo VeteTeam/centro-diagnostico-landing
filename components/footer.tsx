@@ -26,6 +26,7 @@ export function Footer() {
                   width={64}
                   height={64}
                   className="h-full w-full object-cover rounded-2xl p-1.5 bg-background/50 shadow-lg relative z-10"
+                  quality={75}
                 />
               </div>
               <div>

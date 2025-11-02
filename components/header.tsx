@@ -61,6 +61,7 @@ export function Header() {
                 height={48}
                 className="h-full w-full object-cover rounded-xl p-1 bg-white shadow-sm relative z-10 hover:scale-105 transition-transform duration-300"
                 priority
+                quality={75}
               />
             </div>
             <span className="hidden lg:block text-lg font-bold text-foreground leading-tight">
