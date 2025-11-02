@@ -73,7 +73,7 @@ function ImageLightbox({
               alt={`Imagen ${currentIndex + 1} de ${images.length}`}
               fill
               className="object-contain"
-              quality={95}
+              quality={80}
               priority
             />
           </div>
@@ -243,6 +243,7 @@ export function EquipmentDetailPage() {
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         quality={75}
+                        loading={imageIndex < 3 ? "eager" : "lazy"}
                         loading="lazy"
                       />
                       {/* Overlay con icono de zoom */}
