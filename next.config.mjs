@@ -6,13 +6,18 @@ const nextConfig = {
   images: {
     // Optimización automática activada
     formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Tamaños optimizados para reducir procesamiento
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
-    // Calidades permitidas para las imágenes
-    qualities: [75, 85, 90],
+    // Cache aumentado para mejorar rendimiento en Render
+    minimumCacheTTL: 31536000, // 1 año (máximo permitido)
+    // Calidad por defecto más baja para mejorar velocidad (se puede override en componentes)
+    quality: 75,
     // Permitir imágenes locales desde la carpeta public
     remotePatterns: [],
+    // Mejorar rendimiento deshabilitando optimización on-demand en producción
+    // Las imágenes se optimizarán en build time
+    unoptimized: false,
   },
 }
 
