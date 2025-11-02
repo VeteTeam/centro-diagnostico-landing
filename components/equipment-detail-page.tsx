@@ -66,9 +66,9 @@ function ImageLightbox({
       const prevIndex = (currentIndex - 1 + images.length) % images.length
       
       // Precargar siguiente y anterior
-      const nextImg = new window.Image()
+      const nextImg = new globalThis.Image()
       nextImg.src = images[nextIndex]
-      const prevImg = new window.Image()
+      const prevImg = new globalThis.Image()
       prevImg.src = images[prevIndex]
     }
     
@@ -92,7 +92,6 @@ function ImageLightbox({
               className="max-w-full max-h-full w-auto h-auto object-contain"
               loading="eager"
               style={{ 
-                imageRendering: 'high-quality',
                 maxHeight: '90vh'
               }}
             />
@@ -261,9 +260,10 @@ export function EquipmentDetailPage() {
                         alt={`${facility.title} - Vista ${imageIndex + 1}`}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        quality={70}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                        quality={65}
                         loading="lazy"
+                        decoding="async"
                       />
                       {/* Overlay con icono de zoom */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">

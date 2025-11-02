@@ -6,10 +6,10 @@ const nextConfig = {
   images: {
     // 🎯 Optimización para Render (cuenta gratuita - 512MB RAM limit)
     // Priorizar formatos modernos con mejor compresión
-    formats: ['image/avif', 'image/webp'],
-    // Tamaños reducidos para minimizar procesamiento y uso de memoria
-    deviceSizes: [640, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 64, 96, 128, 256],
+    formats: ['image/webp'], // Solo WebP para reducir variantes (más rápido)
+    // Tamaños mínimos para reducir procesamiento al máximo
+    deviceSizes: [640, 1080, 1920], // Reducido de 5 a 3 tamaños
+    imageSizes: [64, 128, 256], // Reducido de 6 a 3 tamaños
     // Cache TTL aumentado para reducir regeneraciones (1 año)
     minimumCacheTTL: 31536000,
     // Permitir imágenes locales desde la carpeta public
