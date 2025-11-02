@@ -11,8 +11,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Cache aumentado para mejorar rendimiento en Render
     minimumCacheTTL: 31536000, // 1 año (máximo permitido)
-    // Calidad por defecto más baja para mejorar velocidad (se puede override en componentes)
-    quality: 75,
     // Permitir imágenes locales desde la carpeta public
     remotePatterns: [],
     // Mejorar rendimiento deshabilitando optimización on-demand en producción
