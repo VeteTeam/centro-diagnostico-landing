@@ -59,6 +59,22 @@ function ImageLightbox({
   onNext: () => void
   onPrev: () => void
 }>) {
+  // Precargar imágenes adyacentes para mejor UX
+  useEffect(() => {
+    const preloadImages = () => {
+      const nextIndex = (currentIndex + 1) % images.length
+      const prevIndex = (currentIndex - 1 + images.length) % images.length
+      
+      // Precargar siguiente y anterior
+      const nextImg = new window.Image()
+      nextImg.src = images[nextIndex]
+      const prevImg = new window.Image()
+      prevImg.src = images[prevIndex]
+    }
+    
+    preloadImages()
+  }, [currentIndex, images])
+
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl w-full p-0 bg-black/95 border-none">
@@ -66,15 +82,19 @@ function ImageLightbox({
           Vista ampliada de imagen {currentIndex + 1} de {images.length}
         </DialogTitle>
         <div className="relative w-full h-[90vh] flex items-center justify-center">
-          {/* Imagen ampliada */}
+          {/* Imagen ampliada - Usando img nativo para evitar optimización on-demand que consume memoria */}
           <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center p-4">
-            <Image
+            {/* Usamos img nativo en lugar de Next.js Image para evitar optimización on-demand */}
+            {/* Esto reduce significativamente el uso de memoria en Render */}
+            <img
               src={images[currentIndex]}
               alt={`Imagen ${currentIndex + 1} de ${images.length}`}
-              fill
-              className="object-contain"
-              quality={80}
-              priority
+              className="max-w-full max-h-full w-auto h-auto object-contain"
+              loading="eager"
+              style={{ 
+                imageRendering: 'high-quality',
+                maxHeight: '90vh'
+              }}
             />
           </div>
 
@@ -242,8 +262,7 @@ export function EquipmentDetailPage() {
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        quality={75}
-                        loading={imageIndex < 3 ? "eager" : "lazy"}
+                        quality={70}
                         loading="lazy"
                       />
                       {/* Overlay con icono de zoom */}
