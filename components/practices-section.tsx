@@ -19,21 +19,21 @@ const practicesCategories: PracticeCategory[] = [
     icon: Activity,
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    count: 18,
+    count: 14,
   },
   {
     name: "Ecografía Doppler",
     icon: Heart,
     color: "text-green-600",
     bgColor: "bg-green-50",
-    count: 8,
+    count: 7,
   },
   {
     name: "Radiografías",
     icon: Monitor,
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    count: 24,
+    count: 17,
   },
 ]
 
