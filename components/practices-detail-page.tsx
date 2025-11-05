@@ -58,23 +58,20 @@ const practicesCategories: PracticeCategory[] = [
     color: "text-purple-600",
     bgColor: "bg-purple-50",
     practices: [
-      "RADIOSCOPIA SIMPLE",
-      "RADIOSCOPIA CON INTENSIFICADOR DE IMAGEN",
-      "RADIOSCOPIA CON CIRCUITO CERRADO DE TELEVISION",
-      "Rx DEL CRANEO, CARA, SENOS PARANASALES O CAVUM ( PRIMERA EXPOSICION )",
-      "RX DEL CRANEO,CARA SENOS PARANASALES O CAVUN ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx TEMPORAL O AGUJEROS OPTICOS, COMPARATIVOS",
-      "Rx ARTICULACION TEMPOROMANDIBULAR",
-      "Rx DE RAQUIS (COLUMNA) ( PRIMERA EXPOSICION )",
-      "RX DE RAQUIS ( COLUMNA ) ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx DE HOMBRO,HUMERO,PELVIS,CADERA Y FEMUR (PRIMERA EXPOSICION )",
-      "RX DE HOMBRO, HUMERO, PELVIS, CADERA, FEMUR ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx DE ANTEBRAZO,CODO,MANO,RODILLA,PIE,PIERNA, TOBILLO Y PIE (COMPRENDE 2 EXPOSICIONES )",
-      "Rx AMPLIADA O MACRORRADIOGRAFIA",
-      "Rx TORAX ( TELE )",
-      "RX TORAX ( EXPOSICIONES SUBSIGUIENTES )",
-      "Rx SIMPLE DE ABDOMEN",
-      "Rx SIMPLE DE ARBOL URINARIO",
+      "RX DE CRÁNEO, CARA, SENOS PARANASALES O CAVUM (PRIMERA EXPOSICIÓN)",
+      "RX DE CRÁNEO, CARA, SENOS PARANASALES O CAVUM (EXPOSICIONES SUBSIGUIENTES)",
+      "RX TEMPORAL O AGUJEROS ÓPTICOS, COMPARATIVOS",
+      "RX ARTICULACION TEMPOROMANDIBULAR",
+      "RX DE RAQUIS (COLUMNA) (PRIMERA EXPOSICIÓN)",
+      "RX DE RAQUIS (COLUMNA) (EXPOSICIONES SUBSIGUIENTES)",
+      "RX DE HOMBRO, HÚMERO, PELVIS, CADERA, FEMUR (PRIMERA EXPOSICIÓN)",
+      "RX DE HOMBRO, HÚMERO, PELVIS, CADERA, FEMUR (EXPOSICIONES SUBSIGUIENTES)",
+      "RX DE ANTEBRAZO, CODO, MANO, RODILLA, PIE, PIERNA, TOBILLO Y PIE (COMPRENDE 2 EXPOSICIONES)",
+      "RX AMPLIADA O MACRORRADIOGRAFIA",
+      "RX DE TÓRAX (TELE)",
+      "RX DE TÓRAX (EXPOSICIONES SUBSIGUIENTES)",
+      "RX SIMPLE DE ABDOMEN",
+      "RX SIMPLE DE ARBOL URINARIO",
     ]
   }
 ]
@@ -135,7 +132,7 @@ export function PracticesDetailPage() {
                     key={practice}
                     className="flex items-start gap-3 p-3 rounded-md hover:bg-secondary/50 transition-colors border border-transparent hover:border-border"
                   >
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" aria-hidden="true" />
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" aria-hidden="true" />
                     <span className="text-sm text-foreground leading-relaxed">{practice}</span>
                   </div>
                 ))}

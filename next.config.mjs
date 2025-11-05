@@ -10,6 +10,8 @@ const nextConfig = {
     // Tamaños mínimos para reducir procesamiento al máximo
     deviceSizes: [640, 1080, 1920], // Reducido de 5 a 3 tamaños
     imageSizes: [64, 128, 256], // Reducido de 6 a 3 tamaños
+    // Calidades permitidas para las imágenes
+    qualities: [70, 75],
     // Cache TTL aumentado para reducir regeneraciones (1 año)
     minimumCacheTTL: 31536000,
     // Permitir imágenes locales desde la carpeta public

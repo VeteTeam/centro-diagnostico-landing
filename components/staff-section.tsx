@@ -12,7 +12,7 @@ interface Professional {
 
 const professionals: Professional[] = [
   {
-    name: "Dr. Castro Forgia Raúl",
+    name: "Prof. Dr. Castro Forgia Raúl",
     mp: "13621",
     specialty: "Diagnóstico por Imágenes",
   },

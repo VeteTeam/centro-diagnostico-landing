@@ -33,7 +33,7 @@ const practicesCategories: PracticeCategory[] = [
     icon: Monitor,
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    count: 17,
+    count: 14,
   },
 ]
 
