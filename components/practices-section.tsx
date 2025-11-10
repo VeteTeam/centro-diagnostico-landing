@@ -10,7 +10,6 @@ interface PracticeCategory {
   icon: LucideIcon
   color: string
   bgColor: string
-  count: number
 }
 
 const practicesCategories: PracticeCategory[] = [
@@ -19,21 +18,18 @@ const practicesCategories: PracticeCategory[] = [
     icon: Activity,
     color: "text-blue-600",
     bgColor: "bg-blue-50",
-    count: 14,
   },
   {
     name: "Ecografía Doppler",
     icon: Heart,
     color: "text-green-600",
     bgColor: "bg-green-50",
-    count: 7,
   },
   {
     name: "Radiografías",
     icon: Monitor,
     color: "text-purple-600",
     bgColor: "bg-purple-50",
-    count: 14,
   },
 ]
 
@@ -84,9 +80,6 @@ export function PracticesSection() {
                 <category.icon className={`w-8 h-8 ${category.color}`} aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">{category.name}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                {category.count} prácticas disponibles
-              </p>
             </motion.div>
           ))}
         </motion.div>

@@ -32,8 +32,8 @@ const practicesCategories: PracticeCategory[] = [
       "ECOGRAFIA AORTA ABDOMINAL DINAMICA Y ESTATICA",
       "ECOGRAFIA PANCREATICA O SUPRARRENAL",
       "ECOGRAFIA CON TRASDUCTOR ENDOVAGINAL",
-      "ECOGRAFIA CON TRANSDUCTOR ENDORECTAL",
-      "ECOGRAFIA MUSCULAR Y OSEAS",
+      "ECOGRAFIA MUSCULO-ESQUELETICO",
+      "ECOGRAFIA OCULAR",
       "ECOGRAFIA DE PARTES BLANDAS",
     ]
   },
@@ -46,10 +46,12 @@ const practicesCategories: PracticeCategory[] = [
       "ECODOPPLER COLOR",
       "ECODOPPLER PERIFERICO COLOR",
       "ECODOPPLER COLOR CIRCULACION PORTAL-SUPRAHEPATICO-CAVA",
-      "ECOGRAFIA TIROIDEA ESPECIALIZADA C/INFORME ECODOPLER",
-      "ECDOPPLER CARDIACO COLOR",
+      "ECODOPPLER TIROIDEO",
+      "ECODOPPLER CARDIACO COLOR",
       "ECODOPPLER CARDIACO FETAL COLOR - ECODOPPLER COLOR CIRCULACION PLACENTARIA",
-      "ECODOPPLER TRANSCRANEAL",
+      "ECOGRAFIA MAMARIA CON DOPPLER COLOR",
+      "ECOGRAFIA HEPATICA DOPPLER COLOR",
+      "ECOGRAFIA TESTICULAR C/DOPPLER",
     ]
   },
   {
@@ -58,18 +60,14 @@ const practicesCategories: PracticeCategory[] = [
     color: "text-purple-600",
     bgColor: "bg-purple-50",
     practices: [
-      "RX DE CRÁNEO, CARA, SENOS PARANASALES O CAVUM (PRIMERA EXPOSICIÓN)",
-      "RX DE CRÁNEO, CARA, SENOS PARANASALES O CAVUM (EXPOSICIONES SUBSIGUIENTES)",
+      "RX DE CRÁNEO, CARA, SENOS PARANASALES O CAVUM",
       "RX TEMPORAL O AGUJEROS ÓPTICOS, COMPARATIVOS",
       "RX ARTICULACION TEMPOROMANDIBULAR",
-      "RX DE RAQUIS (COLUMNA) (PRIMERA EXPOSICIÓN)",
-      "RX DE RAQUIS (COLUMNA) (EXPOSICIONES SUBSIGUIENTES)",
-      "RX DE HOMBRO, HÚMERO, PELVIS, CADERA, FEMUR (PRIMERA EXPOSICIÓN)",
-      "RX DE HOMBRO, HÚMERO, PELVIS, CADERA, FEMUR (EXPOSICIONES SUBSIGUIENTES)",
-      "RX DE ANTEBRAZO, CODO, MANO, RODILLA, PIE, PIERNA, TOBILLO Y PIE (COMPRENDE 2 EXPOSICIONES)",
+      "RX DE RAQUIS (COLUMNA)",
+      "RX DE HOMBRO, HÚMERO, PELVIS, CADERA, FEMUR",
+      "RX DE ANTEBRAZO, CODO, MANO, RODILLA, PIE, PIERNA, TOBILLO Y PIE",
       "RX AMPLIADA O MACRORRADIOGRAFIA",
-      "RX DE TÓRAX (TELE)",
-      "RX DE TÓRAX (EXPOSICIONES SUBSIGUIENTES)",
+      "RX DE TÓRAX",
       "RX SIMPLE DE ABDOMEN",
       "RX SIMPLE DE ARBOL URINARIO",
     ]
@@ -120,9 +118,6 @@ export function PracticesDetailPage() {
                   <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                     {category.name}
                   </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {category.practices.length} prácticas disponibles
-                  </p>
                 </div>
               </div>
 
