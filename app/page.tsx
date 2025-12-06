@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
+
 export default function Home() {
   return (
     <div className="min-h-screen">
