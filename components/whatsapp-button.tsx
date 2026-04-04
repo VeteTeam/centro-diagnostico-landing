@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const SCROLL_THRESHOLD = 300
-const WHATSAPP_NUMBER = "5493518075334"
+const WHATSAPP_NUMBER = "543513443488"
 const WHATSAPP_MESSAGE = "Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios"
 
 export function WhatsAppButton() {

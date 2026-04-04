@@ -1,0 +1,104 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 280 80"
+  role="img"
+  aria-label="CASFRA Imágenes – Logo horizontal"
+>
+  <!--
+    ╔═══════════════════════════════════════════════════════╗
+    ║  CASFRA IMÁGENES · Logo horizontal                   ║
+    ║  Paleta: #0A4DA2 (primario) · #00B4D8 (acento)       ║
+    ║  Fuente: Montserrat (Google Fonts)                    ║
+    ║  Fondo: transparente                                  ║
+    ╚═══════════════════════════════════════════════════════╝
+
+    CÓMO EDITAR:
+    · Colores: buscar #0A4DA2 (azul) y #00B4D8 (cian)
+    · Textos:  editar contenido de <text> directamente
+    · Tamaños: atributo font-size en cada <text>
+    · Ícono:   radios de arcos → atributo r en <circle>
+               y valores A en <path d="M x,y A r,r ...">
+  -->
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+    ]]></style>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       ÍCONO — arcos concéntricos tipo señal / "C"
+       ───────────────────────────────────────────────
+       Todos los arcos son semicírculos con el mismo
+       centro implícito en (0, 27) coordenadas locales.
+       El barrido clockwise (sweep-flag=1) forma la C.
+       Geometría:
+         Arco 1 → radio  9  (acento #00B4D8)
+         Arco 2 → radio 16  (primario #0A4DA2)
+         Arco 3 → radio 24  (primario #0A4DA2, más grueso)
+  ═══════════════════════════════════════════════ -->
+  <g transform="translate(14,14)" fill="none">
+
+    <!-- Punto focal – forma de transductor médico (cápsula vertical) -->
+    <!-- Diferencia clave vs WiFi: un transductor, no un punto omnidireccional -->
+    <rect x="-2" y="21" width="4" height="12" rx="2" fill="#00B4D8"/>
+
+    <!-- Arco 1 · radio 10 · acento  (r: 9→10, stroke: 2.2→2.6) -->
+    <!-- De (0,17) → (0,37) pasando por (10,27) -->
+    <path d="M 0,17 A 10,10 0 0,1 0,37"
+          stroke="#00B4D8"
+          stroke-width="2.6"
+          stroke-linecap="round"/>
+
+    <!-- Arco 2 · radio 18 · primario  (r: 16→18, stroke: 2.6→3.0) -->
+    <!-- De (0,9) → (0,45) pasando por (18,27) -->
+    <path d="M 0,9 A 18,18 0 0,1 0,45"
+          stroke="#0A4DA2"
+          stroke-width="3.0"
+          stroke-linecap="round"/>
+
+    <!-- Arco 3 · radio 26 · primario  (r: 24→26, stroke: 3.2→3.8) -->
+    <!-- De (0,1) → (0,53) pasando por (26,27) -->
+    <path d="M 0,1 A 26,26 0 0,1 0,53"
+          stroke="#0A4DA2"
+          stroke-width="3.8"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       TIPOGRAFÍA
+       Origen del bloque: x=57 (16px después del ícono)
+  ═══════════════════════════════════════════════ -->
+  <g transform="translate(62,0)" fill="#0A4DA2">
+
+    <!-- CASFRA · Montserrat 700 · 28px -->
+    <text
+      x="0" y="36"
+      font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+      font-weight="700"
+      font-size="28"
+      letter-spacing="5">CASFRA</text>
+
+    <!-- Línea separadora sutil bajo CASFRA -->
+    <line x1="0" y1="41" x2="140" y2="41"
+          stroke="#0A4DA2"
+          stroke-width="0.6"
+          opacity="0.25"/>
+
+    <!-- IMÁGENES · Montserrat 400 · 13px  (peso 300→400 por legibilidad, size 11→13) -->
+    <text
+      x="0" y="53"
+      font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+      font-weight="400"
+      font-size="13"
+      letter-spacing="4">IMÁGENES</text>
+
+    <!-- Córdoba · gris claro  (color #64748B→#94A3B8: más recesivo, jerarquía clara) -->
+    <text
+      x="1" y="66"
+      font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+      font-weight="300"
+      font-size="9"
+      letter-spacing="2"
+      fill="#94A3B8">Córdoba</text>
+  </g>
+</svg>

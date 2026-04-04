@@ -1,6 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Phone } from "lucide-react"
+import { LogoCasfra } from "@/components/logo-casfra"
+import { MapPin, Phone, MessageCircle } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -14,24 +14,8 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative h-16 w-16 flex items-center justify-center overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl blur-md opacity-50" 
-                  aria-hidden="true" 
-                />
-                <Image
-                  src="/logoImagenesDrCastro.png"
-                  alt="Logo Imágenes Dr Castro"
-                  width={64}
-                  height={64}
-                  className="h-full w-full object-cover rounded-2xl p-1.5 bg-background/50 shadow-lg relative z-10"
-                  quality={75}
-                />
-              </div>
-              <div>
-                <div className="text-lg font-bold leading-tight">Imágenes Dr Castro</div>
-              </div>
+            <div className="mb-5">
+              <LogoCasfra variant="horizontal" dark className="h-12 w-auto" />
             </div>
             <p className="text-background/80 text-sm text-pretty leading-relaxed">
               Tecnología de última generación y atención profesional para el cuidado de tu salud
@@ -45,17 +29,31 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" aria-hidden="true" />
                 <address className="text-background/80 not-italic">
-                  Dean Funes 581, Córdoba
+                  Dean Funes 581, Córdoba Capital
                 </address>
               </div>
+              <div className="flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <div className="text-background/80 space-y-0.5">
+                  <a href="tel:03515697631" className="block hover:text-background transition-colors">
+                    351 569-7631
+                  </a>
+                  <a href="tel:03515697632" className="block hover:text-background transition-colors">
+                    351 569-7632
+                  </a>
+                  <a href="tel:03515697633" className="block hover:text-background transition-colors">
+                    351 569-7633
+                  </a>
+                </div>
+              </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <Link
-                  href="https://wa.me/5493518075334"
+                  href="https://wa.me/543513443488"
                   className="text-background/80 hover:text-background transition-colors"
                   aria-label="Contactar por WhatsApp - Abre en nueva ventana"
                 >
-                  +54 9 3518 07-5334
+                  WhatsApp: 351 344-3488
                 </Link>
               </div>
             </div>
@@ -79,7 +77,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
-          <p>© {currentYear} Imágenes Dr Castro. Todos los derechos reservados.</p>
+          <p>© {currentYear} CASFRA Imágenes. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

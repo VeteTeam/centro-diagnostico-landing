@@ -1,0 +1,108 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 200 155"
+  role="img"
+  aria-label="CASFRA Imágenes – Logo compacto"
+>
+  <!--
+    ╔═══════════════════════════════════════════════════════╗
+    ║  CASFRA IMÁGENES · Logo compacto (ícono arriba)      ║
+    ║  Uso: avatar, redes sociales, cartelería vertical     ║
+    ║  Paleta: #0A4DA2 (primario) · #00B4D8 (acento)       ║
+    ╚═══════════════════════════════════════════════════════╝
+
+    SPACING SYSTEM (actualizado):
+      Ícono bottom efectivo (stroke incluido): y ≈ 73px
+      Gap ícono → CASFRA cap-top:             16px  (limpio, sin colisión)
+      CASFRA baseline:                         y=108  (+20px respecto al original 88)
+      Separador:                               y=113
+      IMÁGENES baseline:                       y=127
+      Córdoba baseline:                        y=142
+      Margen inferior:                         13px
+      ViewBox height:                          155px (era 145)
+
+    CÓMO EDITAR:
+    · Mover el ícono: ajustar translate del primer <g>
+    · Centrar textos: text-anchor="middle" usa x=100 como eje
+    · Separación ícono/texto: ajustar y de CASFRA (el resto en cascada)
+  -->
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+    ]]></style>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       ÍCONO — centrado horizontalmente en x=100
+       ───────────────────────────────────────────────
+       Centro de arcos: (0,27) coords. locales.
+       Con translate(88,18) → SVG (88,45).
+       Arco 3 derecho máximo: SVG x=114.
+       Centro visual horizontal ≈ 101 ≈ 100.
+       Bottom efectivo (incl. stroke 4px): y=73px.
+  ═══════════════════════════════════════════════ -->
+  <g transform="translate(88,18)" fill="none">
+
+    <!-- Transductor médico (cápsula vertical) · punto focal -->
+    <rect x="-2" y="21" width="4" height="12" rx="2" fill="#00B4D8"/>
+
+    <!-- Arco 1 · radio 10 · acento -->
+    <path d="M 0,17 A 10,10 0 0,1 0,37"
+          stroke="#00B4D8"
+          stroke-width="2.8"
+          stroke-linecap="round"/>
+
+    <!-- Arco 2 · radio 18 · primario -->
+    <path d="M 0,9 A 18,18 0 0,1 0,45"
+          stroke="#0A4DA2"
+          stroke-width="3.2"
+          stroke-linecap="round"/>
+
+    <!-- Arco 3 · radio 26 · primario · trazo más grueso -->
+    <path d="M 0,1 A 26,26 0 0,1 0,53"
+          stroke="#0A4DA2"
+          stroke-width="4.0"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       TIPOGRAFÍA — centrada en x=100
+       Gap visual ícono→CASFRA: 16px (cap-top 89px − ícono bottom 73px)
+  ═══════════════════════════════════════════════ -->
+
+  <!-- CASFRA · Montserrat 700 · 26px · baseline y=108 -->
+  <text
+    x="100" y="108"
+    text-anchor="middle"
+    font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+    font-weight="700"
+    font-size="26"
+    letter-spacing="5"
+    fill="#0A4DA2">CASFRA</text>
+
+  <!-- Línea separadora -->
+  <line x1="60" y1="113" x2="140" y2="113"
+        stroke="#0A4DA2"
+        stroke-width="0.6"
+        opacity="0.25"/>
+
+  <!-- IMÁGENES · Montserrat 400 · 13px · baseline y=127 -->
+  <text
+    x="100" y="127"
+    text-anchor="middle"
+    font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="4"
+    fill="#0A4DA2">IMÁGENES</text>
+
+  <!-- Córdoba · gris recesivo · baseline y=142 -->
+  <text
+    x="100" y="142"
+    text-anchor="middle"
+    font-family="'Montserrat', 'Segoe UI', Arial, sans-serif"
+    font-weight="300"
+    font-size="9"
+    letter-spacing="2"
+    fill="#94A3B8">Córdoba</text>
+</svg>

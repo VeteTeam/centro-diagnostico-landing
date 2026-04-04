@@ -34,8 +34,8 @@ export function Hero() {
   return (
     <section 
       id="inicio" 
-      className="relative min-h-screen flex items-center justify-center pt-20"
-      aria-label="Hero section - Imágenes Dr Castro"
+      className="relative min-h-screen flex items-center justify-center pt-28"
+      aria-label="Hero section - CASFRA Imágenes"
     >
       {/* Background Image with Next.js Image optimization */}
       <div className="absolute inset-0 z-0">
@@ -69,7 +69,7 @@ export function Hero() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance drop-shadow-lg leading-tight"
             variants={itemVariants}
           >
-            Imágenes Dr Castro
+            CASFRA Imágenes
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 text-balance drop-shadow-md font-semibold"
@@ -93,9 +93,9 @@ export function Hero() {
               className="text-lg px-8 py-6 hover:scale-105 transition-transform shadow-xl"
               asChild
             >
-              <a 
-                href="https://wa.me/5493518075334" 
-                target="_blank" 
+              <a
+                href="https://wa.me/543513443488"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactar por WhatsApp - Abre en nueva ventana"
               >

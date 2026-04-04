@@ -17,16 +17,16 @@ const contactInfo: ContactInfo[] = [
   {
     icon: MapPin,
     title: "Dirección",
-    content: "Dean Funes 581, Córdoba",
+    content: "Dean Funes 581, Córdoba Capital",
     action: "Ver en Google Maps",
     href: "https://www.google.com/maps/search/?api=1&query=Dean+Funes+581+Córdoba",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    content: "+54 9 3518 07-5334",
+    content: "351 344-3488",
     action: "Enviar mensaje",
-    href: "https://wa.me/5493518075334",
+    href: "https://wa.me/543513443488",
   },
   {
     icon: Clock,
